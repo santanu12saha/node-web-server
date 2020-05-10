@@ -35,17 +35,6 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-    res.send({
-        name: 'Santanu',
-        likes: [
-            'Painting',
-            'Cities',
-            'Music'
-        ]
-    });
-});
-
-app.get('/home', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
         welcomeMessage: 'Welcome to template engine handlebars, Santanu Saha'
@@ -56,6 +45,13 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page'
     });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Project Page',
+        welcomeMessage: 'Project page text would go here'
+    })
 });
 
 app.get('/bad', (req, res) => {
